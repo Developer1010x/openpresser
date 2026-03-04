@@ -1,0 +1,14 @@
+/home/hacker69i/Desktop/project/pied-piper/target/release/deps/serde-368647385b741cfb.d: /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/hacker69i/Desktop/project/pied-piper/target/release/build/serde-0b7cc1ee46394869/out/private.rs
+
+/home/hacker69i/Desktop/project/pied-piper/target/release/deps/libserde-368647385b741cfb.rlib: /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/hacker69i/Desktop/project/pied-piper/target/release/build/serde-0b7cc1ee46394869/out/private.rs
+
+/home/hacker69i/Desktop/project/pied-piper/target/release/deps/libserde-368647385b741cfb.rmeta: /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/hacker69i/Desktop/project/pied-piper/target/release/build/serde-0b7cc1ee46394869/out/private.rs
+
+/home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/hacker69i/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/hacker69i/Desktop/project/pied-piper/target/release/build/serde-0b7cc1ee46394869/out/private.rs:
+
+# env-dep:OUT_DIR=/home/hacker69i/Desktop/project/pied-piper/target/release/build/serde-0b7cc1ee46394869/out

@@ -1,0 +1,10 @@
+[package]
+name    = "weissman"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+engine  = { path = "../engine" }
+anyhow  = { workspace = true }
+flate2  = { workspace = true }
+zstd    = { workspace = true }

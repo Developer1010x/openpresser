@@ -1,0 +1,17 @@
+[workspace]
+members = [
+    "crates/engine",
+    "crates/weissman",
+    "crates/cli",
+]
+resolver = "2"
+
+[workspace.dependencies]
+rayon       = "1.10"
+thiserror   = "1.0"
+clap        = { version = "4", features = ["derive"] }
+indicatif   = "0.17"
+anyhow      = "1.0"
+flate2      = "1.0"
+zstd        = "0.13"
+criterion   = { version = "0.5", features = ["html_reports"] }

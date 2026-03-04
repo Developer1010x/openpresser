@@ -1,0 +1,15 @@
+[package]
+name    = "openpresser"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "openpresser"
+path = "src/main.rs"
+
+[dependencies]
+engine    = { path = "../engine" }
+weissman  = { path = "../weissman" }
+clap      = { workspace = true }
+indicatif = { workspace = true }
+anyhow    = { workspace = true }
