@@ -5,10 +5,12 @@
 ///   openpresser decompress <input> <output>
 ///   openpresser bench      <input> [--iters 3]
 ///   openpresser score      <input>
+///   openpresser info       <input>
+///   openpresser verify     <input>
 
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
-use engine::{compress, decompress, CompressOptions};
+use engine::{compress, decompress, inspect, verify, ArchiveInfo, CompressOptions};
 use indicatif::{ProgressBar, ProgressStyle};
 use std::path::PathBuf;
 use std::time::Instant;
@@ -64,6 +66,18 @@ enum Commands {
         /// Input file to score
         input: PathBuf,
     },
+
+    /// Show metadata about a PPMO archive (no full decompression)
+    Info {
+        /// Input PPMO file
+        input: PathBuf,
+    },
+
+    /// Verify the integrity of a PPMO archive (checks every block CRC32)
+    Verify {
+        /// Input PPMO file
+        input: PathBuf,
+    },
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────
@@ -77,6 +91,8 @@ fn main() -> Result<()> {
         Commands::Decompress { input, output } => cmd_decompress(&input, &output),
         Commands::Bench { input, iters } => cmd_bench(&input, iters),
         Commands::Score { input } => cmd_score(&input),
+        Commands::Info { input } => cmd_info(&input),
+        Commands::Verify { input } => cmd_verify(&input),
     }
 }
 
@@ -179,6 +195,47 @@ fn cmd_score(input: &PathBuf) -> Result<()> {
     display_score(&ws);
 
     Ok(())
+}
+
+// ── Info ─────────────────────────────────────────────────────────────────
+
+fn cmd_info(input: &PathBuf) -> Result<()> {
+    let data = std::fs::read(input)
+        .with_context(|| format!("reading {}", input.display()))?;
+
+    let info = inspect(&data)
+        .map_err(|e| anyhow::anyhow!("not a valid PPMO archive: {}", e))?;
+
+    print_info(&input.display().to_string(), &info);
+    Ok(())
+}
+
+// ── Verify ───────────────────────────────────────────────────────────────
+
+fn cmd_verify(input: &PathBuf) -> Result<()> {
+    let data = std::fs::read(input)
+        .with_context(|| format!("reading {}", input.display()))?;
+
+    match verify(&data) {
+        Ok(info) => {
+            print_info(&input.display().to_string(), &info);
+            println!("OK: archive is intact ({} block(s) verified)", info.block_count);
+            Ok(())
+        }
+        Err(e) => Err(anyhow::anyhow!("integrity check failed: {}", e)),
+    }
+}
+
+fn print_info(path: &str, info: &ArchiveInfo) {
+    println!("PPMO archive: {path}");
+    println!("  format version : {}", info.version);
+    println!("  parallel       : {}", if info.parallel { "yes" } else { "no" });
+    println!("  blocks         : {}", info.block_count);
+    println!("  block size     : {} bytes", info.block_size);
+    println!("  original size  : {} bytes", info.original_size);
+    println!("  compressed size: {} bytes", info.compressed_size);
+    println!("  ratio          : {:.4}×", info.ratio);
+    println!("  space saving   : {:.2}%", info.space_saving * 100.0);
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────

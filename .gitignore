@@ -1,1 +1,14 @@
 /target/
+
+# Build / debug artifacts
+**/*.rs.bk
+*.pdb
+
+# Compressed sample output produced while testing the CLI
+*.ppmo
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store

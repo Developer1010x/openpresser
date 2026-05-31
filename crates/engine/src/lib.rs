@@ -15,11 +15,13 @@ pub mod compress;
 pub mod decompress;
 pub mod format;
 pub mod huffman;
+pub mod info;
 pub mod lz;
 pub mod middle_out;
 
 pub use compress::{compress, CompressOptions};
 pub use decompress::decompress;
+pub use info::{inspect, verify, ArchiveInfo};
 
 use thiserror::Error;
 
