@@ -1,5 +1,7 @@
 # OpenPresser
 
+![Rust: from scratch](https://img.shields.io/badge/Rust-from_scratch-000000?logo=rust&logoColor=white) ![Codec: PPMO (middle-out)](https://img.shields.io/badge/Codec-PPMO_(middle--out)-6E40C9) ![Parallel: rayon](https://img.shields.io/badge/Parallel-rayon-DEA584) [![License: MIT](https://img.shields.io/badge/License-MIT-2EA44F)](LICENSE)
+
 OpenPresser is a from-scratch **lossless compression toolkit** written in Rust,
 built around a "middle-out" bidirectional codec (PPMO — *Presser Middle-Out*).
 It ships a reusable compression library, a command-line tool, and a benchmark
@@ -125,4 +127,8 @@ cargo bench -p engine            # criterion micro-benchmarks
 
 ## License
 
-See repository for license details.
+MIT, see [LICENSE](LICENSE).
+
+---
+
+Built by **S. Prajwall Narayana** · [Portfolio](https://sprajwallnarayana.vercel.app) · [GitHub](https://github.com/Developer1010x)
